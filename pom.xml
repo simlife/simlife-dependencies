@@ -6,16 +6,15 @@
     <parent>
         <groupId>io.spring.platform</groupId>
         <artifactId>platform-bom</artifactId>
-        <version>Brussels-SR11</version>
+        <version>Brussels-SR6</version>
         <relativePath />
     </parent>
 
     <groupId>io.github.simlife</groupId>
     <artifactId>simlife-dependencies</artifactId>
-    <version>0.1.13</version>
+    <version>0.1.1</version>
     <packaging>pom</packaging>
     <name>Simlife dependencies</name>
-
     <licenses>
         <license>
             <name>Apache License, version 2.0</name>
@@ -24,9 +23,10 @@
         </license>
     </licenses>
     <organization>
-        <name>simlife</name>
-        <url>http://www.simlife.io</url>
+        <name>Simlife</name>
+        <url>http://www.simlife.tech</url>
     </organization>
+
     <scm>
         <connection>scm:git:https://github.com/simlife/simlife-dependencies.git</connection>
         <tag>master</tag>
@@ -52,21 +52,19 @@
         <cassandra-driver.version>3.3.2</cassandra-driver.version>
         <cassandra-unit-spring.version>3.3.0.2</cassandra-unit-spring.version>
         <couchmove.version>1.0.1</couchmove.version>
-        <couchbase-testcontainer.version>1.11</couchbase-testcontainer.version>
-        <couchbase-client.version>2.5.4</couchbase-client.version>
+        <couchbase-testcontainer.version>1.0</couchbase-testcontainer.version>
         <cucumber.version>1.2.5</cucumber.version>
         <dropwizard-metrics.version>3.2.5</dropwizard-metrics.version>
-        <elasticsearch-transport-client.version>6.1.0</elasticsearch-transport-client.version>
         <gatling.version>2.2.5</gatling.version>
         <guava.version>23.5-jre</guava.version>
-        <hazelcast.version>3.9.1</hazelcast.version>
+        <hazelcast.version>3.9</hazelcast.version>
         <hazelcast-hibernate52.version>1.2.2</hazelcast-hibernate52.version>
         <hazelcast-wm.version>3.8.3</hazelcast-wm.version>
         <hibernate.version>5.2.12.Final</hibernate.version>
         <hikaricp.version>2.7.4</hikaricp.version>
         <infinispan-cloud.version>9.1.3.Final</infinispan-cloud.version>
         <infinispan-spring-boot-starter.version>1.0.0.Final</infinispan-spring-boot-starter.version>
-        <simlife-server.version>1.3.1</simlife-server.version>
+        <simlife-server.version>1.2.0</simlife-server.version>
         <jjwt.version>0.9.0</jjwt.version>
         <jzlib.version>1.1.3</jzlib.version>
         <liquibase-mssql.version>1.6.2</liquibase-mssql.version>
@@ -77,18 +75,18 @@
         <mongobee.version>0.13</mongobee.version>
         <mssql-jdbc.version>6.2.2.jre8</mssql-jdbc.version>
         <oracle-jdbc.version>12.2.0.1</oracle-jdbc.version>
-        <problem-spring-web.version>0.22.1</problem-spring-web.version>
+        <problem-spring-web.version>0.22.0</problem-spring-web.version>
         <prometheus-simpleclient.version>0.1.0</prometheus-simpleclient.version>
         <!-- The spring-boot version should match the one in
         https://github.com/spring-io/platform/blob/v${project.parent.version}/platform-bom/pom.xml -->
-        <spring-boot.version>1.5.14.RELEASE</spring-boot.version>
-        <spring-cloud.version>Dalston.SR5</spring-cloud.version>
+        <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+        <spring-cloud.version>Dalston.SR4</spring-cloud.version>
         <!-- The netflix version should match the one in
         https://github.com/spring-cloud/spring-cloud-release/blob/v${spring-cloud.version}/spring-cloud-dependencies/pom.xml -->
-        <spring-cloud-netflix.version>1.3.6.RELEASE</spring-cloud-netflix.version>
+        <spring-cloud-netflix.version>1.3.5.RELEASE</spring-cloud-netflix.version>
         <spring-cloud-stream.version>Chelsea.SR2</spring-cloud-stream.version>
         <spring-social-google.version>1.0.0.RELEASE</spring-social-google.version>
-        <springfox.version>2.8.0</springfox.version>
+        <springfox.version>2.7.0</springfox.version>
     </properties>
 
     <dependencyManagement>
@@ -147,11 +145,6 @@
                 <groupId>com.hazelcast</groupId>
                 <artifactId>hazelcast-wm</artifactId>
                 <version>${hazelcast-wm.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.elasticsearch.client</groupId>
-                <artifactId>transport</artifactId>
-                <version>${elasticsearch-transport-client.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -275,18 +268,13 @@
                 <version>${couchmove.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.couchbase.client</groupId>
-                <artifactId>java-client</artifactId>
-                <version>${couchbase-client.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.microsoft.sqlserver</groupId>
                 <artifactId>mssql-jdbc</artifactId>
                 <version>${mssql-jdbc.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.jdbc</groupId>
-                <artifactId>ojdbc8</artifactId>
+                <artifactId>ojdbc7</artifactId>
                 <version>${oracle-jdbc.version}</version>
                 <!-- More information at https://blogs.oracle.com/dev2dev/entry/how_to_get_oracle_jdbc -->
             </dependency>
@@ -443,11 +431,11 @@
                 <configuration>
                     <rules>
                         <requireMavenVersion>
-                            <message>You are running an older version of Maven. simlife requires at least Maven ${maven.version}</message>
+                            <message>You are running an older version of Maven. Simlife requires at least Maven ${maven.version}</message>
                             <version>[${maven.version},)</version>
                         </requireMavenVersion>
                         <requireJavaVersion>
-                            <message>You are running an older version of Java. simlife requires at least JDK ${java.version}</message>
+                            <message>You are running an older version of Java. Simlife requires at least JDK ${java.version}</message>
                             <version>[${java.version}.0,)</version>
                         </requireJavaVersion>
                     </rules>
