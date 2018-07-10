@@ -14,8 +14,8 @@
     <artifactId>simlife-dependencies</artifactId>
     <version>0.1.13</version>
     <packaging>pom</packaging>
-    <name>Simlife dependencies</name>o
-    <url>https://github.com/simlife/simlife-dependencies</url>
+    <name>Simlife dependencies</name>
+
     <licenses>
         <license>
             <name>Apache License, version 2.0</name>
