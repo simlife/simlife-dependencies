@@ -39,7 +39,7 @@ env:
     - SIMLIFE_LIB_BRANCH=release
     # if SIMLIFE_BRANCH value is release, use the release from NPM
     - SIMLIFE_REPO=https://github.com/simlife/generator-simlife.git
-    - SIMLIFE_BRANCH=v4.x_maintenance
+    - SIMLIFE_BRANCH=master
 
   matrix:
     - SIMLIFE=ngx-default PROFILE=prod PROTRACTOR=1
